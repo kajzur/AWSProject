@@ -2,3 +2,13 @@ language: node_js
 node_js:
 - '0.10'
 before_install: npm install -g mocha
+deploy:
+  provider: s3
+  access_key_id: AKIAIFEM4OLSXDZ4RMZA
+  secret_access_key:
+    secure: ZMemauG6dLej9By8apsu780vaE46f9unOCleee5csQv+Iz63+5Rhv+z1Liv7TTL2qrUy4+5CBXIwdx2EwJxsWKKahjaim7K+wVKDgTSTVmdzy8yI/Iqq6aG6NPL6Rh/eeBN+rk6vlDAwlXzBeeudXgzFSborQBK6p+lteyi+Bdc=
+  bucket: deploy-weeia
+  upload-dir: mateuszmazurek
+  acl: ''
+  on:
+    repo: kajzur/AWSProject
