@@ -9,6 +9,6 @@ deploy:
     secure: ZMemauG6dLej9By8apsu780vaE46f9unOCleee5csQv+Iz63+5Rhv+z1Liv7TTL2qrUy4+5CBXIwdx2EwJxsWKKahjaim7K+wVKDgTSTVmdzy8yI/Iqq6aG6NPL6Rh/eeBN+rk6vlDAwlXzBeeudXgzFSborQBK6p+lteyi+Bdc=
   bucket: deploy-weeia
   upload-dir: mateuszmazurek
-  acl: ''
+  acl: 'public_read'
   on:
     repo: kajzur/AWSProject
