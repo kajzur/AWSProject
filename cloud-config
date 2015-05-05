@@ -17,7 +17,7 @@ packages:
 runcmd:
  - [ ln, -s, /usr/bin/nodejs, /usr/bin/node ]
  - [ npm, install, -g, forever ]
- - [ s3cmd, --config, /usr/bin/.s3cfg, sync, "s3://deploy-weeia/mateuszmazurek", /usr/bin ]
+ - [ s3cmd, --config, /usr/bin/.s3cfg, sync, "s3://deploy-weeia/mateuszmazurek", /usr/bin/mateuszmazurek ]
  - [ cd, /usr/bin/mateuszmazurek]
  - [ npm, install ]
  - [ AWS_REGION="us-west-2", forever, /usr/bin/mateuszmazurek/app.js ]
