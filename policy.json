@@ -2,7 +2,7 @@
 	"conditions": [ ["starts-with", "$key", "mateusz.mazurek/"],
     				 {"bucket": "lab4-weeia"}, 
     				 {"acl": "private"},
-    				 {"success_action_redirect": "$ip:8080/list"},
+    				 {"success_action_redirect": "$ip/list"},
     				 ["content-length-range", 0, 1048576]
     				]   
 }

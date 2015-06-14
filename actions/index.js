@@ -12,8 +12,10 @@ exports.action = function(request, callback) {
 	var s3Form = new S3Form(policy);
 	var awsConfig  = new AWS.EC2MetadataCredentials();
 
-	AWS.config.loadFromPath(configFilePath);				
+	AWS.config.loadFromPath(configFilePath);
+	awsConfig = helpers.readJSONFile(configFilePath);								
 
+	
 	helpers.getCurrentDomain(function(ip){
 		console.log("Detected current domain: "+ip);
 		var fields = s3Form.generateS3FormFields(ip);
