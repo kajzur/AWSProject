@@ -15,11 +15,11 @@ exports.action = function(request, callback) {
 	AWS.config.loadFromPath(configFilePath);
 	awsConfig = helpers.readJSONFile(configFilePath);								
 
-	
+
 	helpers.getCurrentDomain(function(ip){
 		console.log("Detected current domain: "+ip);
-		var fields = s3Form.generateS3FormFields(ip);
-		callback(null, {template: template, params:{fields:s3Form.addS3CredientalsFields(fields, awsConfig, ip) , bucket:"lab4-weeia"}});
+		var fields = s3Form.generateS3FormFields(ip.trim());
+		callback(null, {template: template, params:{fields:s3Form.addS3CredientalsFields(fields, awsConfig, ip.trim()) , bucket:"lab4-weeia"}});
 	});
 
 
