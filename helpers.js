@@ -98,7 +98,7 @@ var readJSONFile = function(fileName){
 }
 
 
-var getCurrentIP = function (callbackFunction){
+var getCurrentDomain = function (callbackFunction){
 	var sys = require('sys')
 	var exec = require('child_process').exec;
 	child = exec("ec2metadata --public-hostname", function (error, stdout, stderr) {
@@ -117,4 +117,4 @@ exports.calculateMultiDigest = calculateMultiDigest; //= function(doc, algorithm
 exports.hmac = hmac; // = function(algorithm, key, text, encoding) 
 exports.encode = encode; //encode = function(obj, encoding)
 exports.readJSONFile = readJSONFile; // = function(fileName)
-exports.getCurrentIP = getCurrentIP; // = function()
+exports.getCurrentDomain = getCurrentDomain; // = function()

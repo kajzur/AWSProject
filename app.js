@@ -1,5 +1,5 @@
 var http = require('http');
-var PORT = 8080;
+var PORT = 80;
 var helpers = require("./helpers");
 var ACTIONS_CONFIG_FILE = "actions.json";
 var ACTIONS_FOLDER = "./actions/";

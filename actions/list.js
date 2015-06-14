@@ -16,23 +16,16 @@ var removeRoot = function(arr){
 
 exports.action = function(request, callback) {
 
-	var awsConfig  = new AWS.EC2MetadataCredentials();
-	awsConfig.refresh(function(err){
-		if(err){
-			AWS.config.loadFromPath(configFilePath);
-			awsConfig = helpers.readJSONFile(configFilePath);								
-		}
-		var params = {
-		  Bucket: 'lab4-weeia',
-		  Prefix: prefix
-		};
-		var s3 = new AWS.S3();
-		s3.listObjects(params, function(err, data) {
-		  if(request.query.key)
-		  	var uploaded = request.query.key;
-		  callback(null, {template: template, params:{elements:removeRoot(data.Contents), uploaded: uploaded, prefix:prefix}});
-		});
-
+	AWS.config.loadFromPath(configFilePath);
+	var params = {
+		Bucket: 'lab4-weeia',
+		Prefix: prefix
+	};
+	var s3 = new AWS.S3();
+	s3.listObjects(params, function(err, data) {
+		if(request.query.key)
+			var uploaded = request.query.key;
+		callback(null, {template: template, params:{elements:removeRoot(data.Contents), uploaded: uploaded, prefix:prefix}});
 	});
 
 }
