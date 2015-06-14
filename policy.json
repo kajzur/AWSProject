@@ -2,7 +2,7 @@
 	"conditions": [ ["starts-with", "$key", "mateusz.mazurek/"],
     				 {"bucket": "lab4-weeia"}, 
     				 {"acl": "private"},
-    				 {"success_action_redirect": "http://$ip/list"},
+    				 {"success_action_redirect": "http://mazurekLB-14488211.us-west-2.elb.amazonaws.com/list"},
     				 ["content-length-range", 0, 1048576]
     				]   
 }
